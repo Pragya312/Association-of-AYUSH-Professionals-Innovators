@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Association of AYUSH Professionals and Innovators</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1b4332',     // Deep Forest Green
+                            primary: '#2d6a4f',  // Lush Emerald Green
+                            accent: '#40916c',   // Vibrant Green
+                            gold: '#e9c46a',     // Nutritional Gold
+                            amber: '#d4a373',    // Warm Amber
+                            coral: '#e76f51',    // Terracotta Coral
+                            bgLight: '#f4f6f0',  // Soft Neutral Warm Grey/Green
+                            cardBg: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(27, 67, 50, 0.92) 0%, rgba(45, 106, 79, 0.82) 50%, rgba(231, 111, 81, 0.75) 100%);
+        }
+        .card-hover-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-sans bg-brand-bgLight text-slate-800 antialiased flex flex-col min-h-screen">
+
+    
+    <!-- MAIN STICKY NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-header border-b border-emerald-900/10 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Brand -->
+<a href="#" class="flex items-center gap-3 group">
+    <!-- Green Background Div Hata Diya Gaya Hai, Seedhe Bada Logo Display Hoga -->
+    <img src="logo.png" alt="AYUSH Logo" style="width: 75px; height: 75px; object-fit: contain;" class="transition-transform group-hover:scale-105" />
+    
+    <div>
+        <span class="block text-xs font-semibold uppercase tracking-widest text-brand-primary">Association of</span>
+        <span class="block font-serif text-lg font-bold text-brand-dark leading-tight">AYUSH Professionals & Innovators</span>
+    </div>
+</a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-700">
+                    <a href="#about" class="hover:text-brand-primary transition-colors">About</a>
+                    <a href="#focus-areas" class="hover:text-brand-primary transition-colors">Focus Areas</a>
+                    <a href="#initiatives" class="hover:text-brand-primary transition-colors">Flagship Projects</a>
+                    <a href="#alignments" class="hover:text-brand-primary transition-colors">Alignments</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <button onclick="openModal()" class="bg-brand-coral hover:bg-opacity-90 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                        <i data-lucide="heart-handshake" class="w-4 h-4"></i> Partner With Us
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-brand-dark hover:bg-slate-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-700 font-medium hover:text-brand-primary">About Us</a>
+            <a href="#focus-areas" class="block py-2 text-slate-700 font-medium hover:text-brand-primary">Key Focus Areas</a>
+            <a href="#initiatives" class="block py-2 text-slate-700 font-medium hover:text-brand-primary">Flagship Projects</a>
+            <a href="#calculator" class="block py-2 text-slate-700 font-medium hover:text-brand-primary">Impact Estimator</a>
+            <a href="#alignments" class="block py-2 text-slate-700 font-medium hover:text-brand-primary">National Alignments</a>
+            <button onclick="openModal()" class="w-full mt-2 bg-brand-coral text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2">
+                <i data-lucide="heart-handshake" class="w-4 h-4"></i> Partner With Us
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-brand-dark text-white overflow-hidden py-20 lg:py-28">
+        <!-- Decorative Background Pattern -->
+        <div class="absolute inset-0 hero-overlay opacity-90 z-0"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(#e9c46a_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-brand-gold text-xs font-semibold tracking-wide uppercase">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i> Evidence-Based Non-Profit NGO
+                    </div>
+                    
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                        Building Healthier, Educated & <span class="text-brand-gold italic">Empowered</span> Communities
+                    </h1>
+                    
+                    <p class="text-slate-200 text-lg sm:text-xl font-light leading-relaxed max-w-2xl">
+                        Integrating AYUSH principles, preventive healthcare, nutrition & holistic education towards the national vision of <strong class="font-semibold text-white">Viksit Bharat@2047</strong>.
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="#initiatives" class="bg-brand-gold hover:bg-yellow-400 text-brand-dark font-semibold px-7 py-3.5 rounded-xl text-base transition-all shadow-lg hover:shadow-xl flex items-center gap-2">
+                            Explore Flagship Projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    
+                    </div>
+                </div>
+            
+               <!-- Right Visual Card / Video Highlight -->
+<div class="lg:col-span-5">
+    <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-3 sm:p-4 rounded-2xl shadow-2xl relative overflow-hidden group">
+        
+        <!-- Video Element -->
+        <video 
+            class="w-full h-80 sm:h-96 object-cover rounded-xl shadow-inner" 
+            autoplay 
+            loop 
+            muted 
+            playsinline>
+            <source src="hero.mp4" type="video/mp4" />
+            Aapka browser video tag support nahi karta.
+        </video>
+
+        <!-- Optional Subtle Overlay/Gradient (Visual balance maintain karne ke liye) -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none rounded-2xl"></div>
+
+    </div>
+</div>
+                </div>
+            </div>
+<!-- STATS COUNTER STRIP -->
+            <!-- Margin aur Padding aur zyada kam kar di (mt-4 pt-4) -->
+            <div class="mt-4 pt-4 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                    <div class="text-3xl sm:text-4xl font-bold font-serif text-brand-gold">2016</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-300 mt-1">Established Year</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                    <div class="text-3xl sm:text-4xl font-bold font-serif text-white">7+</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-300 mt-1">Core Focus Areas</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                    <div class="text-3xl sm:text-4xl font-bold font-serif text-brand-gold">8+</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-300 mt-1">Flagship Initiatives</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                    <div class="text-3xl sm:text-4xl font-bold font-serif text-white">1000s</div>
+                    <div class="text-xs uppercase tracking-wider text-slate-300 mt-1">Lives Impacted</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ABOUT US SECTION (DARK THEME) -->
+<!-- Section Padding ko bilkul compact kar diya hai (py-6 lg:py-8) -->
+<section id="about" class="py-6 lg:py-8 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Grid Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            
+            <!-- Left Side: Image Block (5 Columns) -->
+            <!-- Image aur quote ke beech ka space bilkul kam kar diya (space-y-1.5) -->
+            <div class="lg:col-span-5 space-y-1.5">
+                <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl">
+                    <img src="main.jpeg" 
+                         alt="About AYUSH Association" 
+                         class="w-full h-72 sm:h-80 lg:h-[380px] object-cover">
+                </div>
+
+                <!-- Highlight Box under Image -->
+                <div class="p-3 rounded-xl bg-slate-800/70 border border-slate-700/80">
+                    <p class="text-xs sm:text-sm text-slate-300 italic leading-relaxed m-0">
+                        "Grounded in scientific, evidence-based frameworks, our programs cultivate resilient communities equipped to meet future challenges."
+                    </p>
+                </div>
+            </div>
+            <!-- Right Side: Clean & Aligned Text Content (7 Columns) -->
+            <div class="lg:col-span-7 flex flex-col justify-center text-left">
+                
+                <!-- Subtitle Badge -->
+                <div class="mb-3">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-400 bg-emerald-950/70 px-3.5 py-1.5 rounded-full border border-emerald-800/60">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        About The Organization
+                    </span>
+                </div>
+
+                <!-- Heading -->
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white leading-snug tracking-tight mb-5">
+                    Building a Healthier & Skilled India <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">through AYUSH</span>
+                </h2>
+
+                <!-- Main Paragraphs with Accent Line -->
+<div class="relative pl-5 border-l-2 border-emerald-500/50 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed tracking-normal text-justify hyphens-auto mb-8">
+    <p class="m-0">
+        Established on <strong class="text-white font-medium">2nd February 2016</strong>, <strong class="text-white font-medium">The Association of AYUSH Professionals and Innovators</strong> is a non-profit organization dedicated to advancing healthcare and education. By integrating traditional wellness systems with modern learning methodologies, the Association strives to foster a healthier, skilled, and self-reliant India in alignment with the national vision of <strong class="text-emerald-400 font-semibold">Viksit Bharat@2047</strong>.
+    </p>
+
+    <p class="m-0 text-slate-300/90">
+        The Association views innovative education and quality healthcare as the twin drivers of sustainable social progress. Education empowers individuals by broadening knowledge and career opportunities, while strategic healthcare initiatives ensure the physical and mental well-being required for a productive society.
+    </p>
+</div>
+
+                <!-- Key Highlights Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-800/80">
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-800 hover:border-emerald-500/30 transition-colors">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
+                            <span class="text-emerald-400 font-bold text-xs">✓</span>
+                        </div>
+                        <span class="text-xs sm:text-sm text-slate-200 font-medium">Integrated Traditional & Modern Systems</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-800 hover:border-emerald-500/30 transition-colors">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
+                            <span class="text-emerald-400 font-bold text-xs">✓</span>
+                        </div>
+                        <span class="text-xs sm:text-sm text-slate-200 font-medium">Evidence-Based Healthcare Frameworks</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-800 hover:border-emerald-500/30 transition-colors">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
+                            <span class="text-emerald-400 font-bold text-xs">✓</span>
+                        </div>
+                        <span class="text-xs sm:text-sm text-slate-200 font-medium">Innovative Education & Skill Building</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-800 hover:border-emerald-500/30 transition-colors">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
+                            <span class="text-emerald-400 font-bold text-xs">✓</span>
+                        </div>
+                        <span class="text-xs sm:text-sm text-slate-200 font-medium">Sustainable Social Progress</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- VISION & MISSION SECTION (LIGHT THEME) -->
+<section id="vision-mission" class="py-8 lg:py-12 bg-slate-50 text-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+      <!-- Container: Outer margins aur padding se dono taraf equal space bachega -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14 space-y-3 text-center">
+    <span class="inline-block text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-100/80 px-3.5 py-1.5 rounded-full border border-emerald-200">
+        About the Association
+    </span>
+    
+    <!-- Heading: Laptop par ek line mein aur dono taraf se perfectly balanced -->
+    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight md:whitespace-nowrap mx-auto">
+        Integrating Traditional Wisdom with Modern Evidence
+    </h2>
+    <!-- Paragraph: Laptop par ek line mein -->
+    <p class="text-slate-600 text-base sm:text-lg leading-relaxed md:whitespace-nowrap">
+        Grounded in scientific, evidence-based frameworks, our programs cultivate resilient communities equipped to meet future challenges.
+    </p>
+</div>
+        <!-- Vision & Mission Grid -->
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-10">
+            
+           <!-- Vision Card -->
+<div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 relative overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-100/60 rounded-full blur-2xl pointer-events-none"></div>
+    <div>
+        <!-- Icon & Title Header -->
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 rounded-xl bg-emerald-800 text-amber-400 flex items-center justify-center shrink-0 shadow-sm">
+                <i data-lucide="eye" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-slate-900 tracking-tight">Core Vision</h3>
+        </div>
+
+        <!-- Quote Block -->
+        <blockquote class="text-slate-800 text-sm sm:text-base leading-relaxed italic border-l-4 border-amber-400 pl-4 py-3 my-4 bg-slate-50 rounded-r-xl text-justify hyphens-auto">
+            "To build healthier, educated, nutritionally secure and empowered communities through an integrated approach that combines AYUSH principles, preventive healthcare, and nutrition, education and community development."
+        </blockquote>
+
+        <!-- Description Paragraph -->
+        <p class="text-slate-600 text-sm leading-relaxed text-justify hyphens-auto mt-4 m-0">
+            We envision a society where every individual has access to knowledge, essential health support and opportunities for a dignified and sustainable life.
+        </p>
+    </div>
+</div>
+
+<!-- Mission Card -->
+<div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 relative overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-100/60 rounded-full blur-2xl pointer-events-none"></div>
+    <div>
+        <!-- Icon & Title Header -->
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <i data-lucide="target" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-slate-900 tracking-tight">Core Mission</h3>
+        </div>
+
+        <!-- Quote Block -->
+        <blockquote class="text-slate-800 text-sm sm:text-base leading-relaxed italic border-l-4 border-amber-500 pl-4 py-3 my-4 bg-slate-50 rounded-r-xl text-justify hyphens-auto">
+            "To serve communities through integrated AYUSH, healthcare, nutrition, education and awareness initiatives, with a special focus on vulnerable populations and the prevention of malnutrition."
+        </blockquote>
+
+        <!-- Description Paragraph -->
+        <p class="text-slate-600 text-sm leading-relaxed text-justify hyphens-auto mt-4 m-0">
+            Through evidence-informed AYUSH practices, community participation, and targeted social interventions, we create measurable and lasting social impact.
+        </p>
+    </div>
+</div>
+    </div>
+</section>
+
+    <!-- AUTOMATIC SLIDESHOW SECTION -->
+<section style="padding: 32px 0; background-color: #0f172a;">
+    <div style="max-width: 950px; margin: 0 auto; padding: 0 16px;">
+        
+        <!-- Slideshow Box -->
+        <div id="slideshow-box" style="position: relative; width: 100%; height: 420px; border-radius: 20px; overflow: hidden; background: linear-gradient(135deg, #0b0f19 0%, #1e293b 100%); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(5, 150, 105, 0.15); border: 1px solid #334155;">
+            
+            <!-- Decorative Ambient Glow Circles in Background (Side ki khali jagah ko fill karne ke liye) -->
+            <div style="position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: rgba(5, 150, 105, 0.25); border-radius: 50%; filter: blur(50px); pointer-events: none;"></div>
+            <div style="position: absolute; bottom: -50px; right: -50px; width: 200px; height: 200px; background: rgba(217, 119, 6, 0.2); border-radius: 50%; filter: blur(50px); pointer-events: none;"></div>
+
+            <!-- Slide 1 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 1; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <!-- Subtle Blurred Backdrop for fill -->
+                <img src="medical.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <!-- Main Image -->
+                <img src="medical.jpg" alt="Healthcare" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #059669; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Healthcare</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Free Rural Health & Diagnostic Camps</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Providing preventive care, screening, and medicine distribution across rural communities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="poshan.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="poshan.png" alt="Healthcare" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #059669; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Kuposhan Mukat Bharat</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Poshan kits distribution</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Providing medicine and nutritional kits distribution across rural communities for Kuposhan Muakt Bharat</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="image/mmu1.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="image/mmu1.png" alt="Education" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #d97706; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Medical</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Mobile Medical Unit Help</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Equipping ambulance, doctors, medical team and medical kits for needys on emergency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="image/mmu2.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="image/mmu2.png" alt="Education" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #d97706; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Medical</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Free medical check-ups</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Equipping schools with modern learning tools, desks, and educational kits.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="image/mmu3.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="image/mmu3.png" alt="Education" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #d97706; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Medical</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Patented School Bags with inbuilt Educational Deskit distribution</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Look out for periodic community health camps and mobile medical vans.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="girls edu.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="girls edu.jpg" alt="Education" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #d97706; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Education</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Encouraging Beti bachao Beti Padhao</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Equipping schools with modern learning tools, bags, desks, and educational kits for girls to empower them.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="image/mmu5.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="image/mmu5.jpg" alt="Education" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #d97706; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Health</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Health camp for kids</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Providing free pediatric and community health camps offering general check-ups, nutritional assessments, and eye/dental screenings for children.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="image/mmu4.jpeg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="image/mmu4.jpeg" alt="Clean Water" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #10b981; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Clean Water</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Kits distributions</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Ensuring child health check-ups with the distribution of Poshan kits containing dry rations, protein supplements, and micronutrients.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="comm.jpeg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="comm.jpeg" alt="Community Building" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #10b981; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Community Building</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Awareness program about Anemia</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Providing awareness about Anemia and Kuposhan to public for better and healthy environment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="auto-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; display: flex; align-items: center; justify-content: center;">
+                <img src="image/comm1.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px); opacity: 0.25; transform: scale(1.1);">
+                <img src="image/comm1.png" alt="Community Building" style="position: relative; max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,15,25,0.95) 15%, rgba(11,15,25,0.4) 50%, transparent 100%); display: flex; align-items: flex-end; padding: 32px; z-index: 2;">
+                    <div style="color: white; max-width: 800px;">
+                        <span style="background-color: #10b981; color: white; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase;">Community Building</span>
+                        <h3 style="font-size: 22px; font-weight: bold; margin-top: 8px; margin-bottom: 6px; color: #fff;">Awareness program about Anemia</h3>
+                        <p style="font-size: 14px; color: #cbd5e1; margin: 0;">Providing awareness about Anemia and Kuposhan to public for better and healthy environment.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+   <!-- KEY FOCUS AREAS -->
+<section id="focus-areas" class="py-20 relative bg-cover bg-center bg-no-repeat bg-[url('bg.jpg')] border-y border-emerald-900/5">
+    <!-- Overlay for better text readability -->
+    <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-[2px]"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span class="text-brand-primary text-xs font-bold uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-slate-200">Holistic Strategy</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Key Pillars of Intervention</h2>
+            <p class="text-slate-200 text-base">Seven strategic pillars designed to address root causes of social and healthcare vulnerability across India.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Focus Area 1 -->
+            <div class="bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/80 shadow-sm card-hover-effect">
+                <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-primary flex items-center justify-center mb-5">
+                    <i data-lucide="activity" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">AYUSH & Preventive Healthcare</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Promoting holistic wellness, preventive practices, traditional health systems, and proactive community health awareness.</p>
+            </div>
+
+            <!-- Focus Area 2 -->
+            <div class="bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/80 shadow-sm card-hover-effect">
+                <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5">
+                    <i data-lucide="apple" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Nutrition & Malnutrition</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Supporting nutrition awareness, regular screening, supplementation, and community interventions like Poshan Kits.</p>
+            </div>
+
+            <!-- Focus Area 3 -->
+            <div class="bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/80 shadow-sm card-hover-effect">
+                <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-5">
+                    <i data-lucide="book-open" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Education & Awareness</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Promoting health, nutrition, hygiene and life-skills education among children, families, and rural school networks.</p>
+            </div>
+
+            <!-- Focus Area 4 -->
+            <div class="bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/80 shadow-sm card-hover-effect">
+                <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center mb-5">
+                    <i data-lucide="heart" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Women & Child Welfare</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Supporting the overall health, nutritional security, education, and development of mothers, adolescent girls, and children.</p>
+            </div>
+
+            <!-- Focus Area 5 -->
+            <div class="bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/80 shadow-sm card-hover-effect">
+                <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mb-5">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Community Empowerment</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Encouraging grassroots participation, localized capacity building, and sustainable solutions to unique social challenges.</p>
+            </div>
+
+            <!-- Focus Area 6 -->
+            <div class="bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/80 shadow-sm card-hover-effect">
+                <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-5">
+                    <i data-lucide="trees" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Healthy & Sustainable Environment</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Promoting environmentally responsible, resilient practices that contribute to long-term public health and clean living.</p>
+            </div>
+
+            <!-- Focus Area 7 -->
+            <div class="bg-brand-dark/95 backdrop-blur-sm text-white p-6 rounded-2xl border border-slate-200/80 shadow-sm card-hover-effect sm:col-span-2 lg:col-span-3 flex flex-col md:flex-row items-center gap-6">
+                <div class="w-14 h-14 rounded-2xl bg-brand-gold text-brand-dark flex-shrink-0 flex items-center justify-center">
+                    <i data-lucide="microscope" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-brand-gold mb-1">Evidence-Based Action</h3>
+                    <p class="text-slate-200 text-sm leading-relaxed">Utilizing rigorous scientific knowledge, field-level assessments, continuous monitoring, and measurable outcomes to maximize the impact of every intervention.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FLAGSHIP PROJECTS & INITIATIVES -->
+    <section id="initiatives" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-brand-primary text-xs font-bold uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Ground Interventions</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Flagship Projects & Partnerships</h2>
+                </div>
+
+                <!-- Project Filters -->
+                <div class="flex flex-wrap gap-2" id="project-filters">
+                    <button onclick="filterProjects('all')" class="filter-btn active bg-brand-primary text-white px-4 py-2 rounded-xl text-xs font-semibold transition-all">All Projects</button>
+                    <button onclick="filterProjects('health')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition-all">Health & Renal</button>
+                    <button onclick="filterProjects('nutrition')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition-all">Nutrition & Poshan</button>
+                    <button onclick="filterProjects('education')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition-all">Education & Tech</button>
+                    <button onclick="filterProjects('livelihood')" class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition-all">Livelihood & Women</button>
+
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="education">
+                    <div class="bg-gradient-to-br from-emerald-800 to-brand-primary p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-emerald-100 font-semibold uppercase">Education Infrastructure</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">Education Bags with Desk</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Providing foundational infrastructure and ergonomically designed smart learning tools for students in underserved rural schools.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Smart Learning Tools</span>
+                            <span class="font-semibold text-brand-primary">Schools & Anganwadis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="health">
+                    <div class="bg-gradient-to-br from-blue-900 to-cyan-800 p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-cyan-100 font-semibold uppercase">Clean Water</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">AAROGYA RATH (R.O)</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Deploying clean drinking water supply infrastructure and mobile purification units serving targeted vulnerable rural communities.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="droplet" class="w-4 h-4 text-blue-600"></i> Pure RO Water</span>
+                            <span class="font-semibold text-brand-primary">Rural Focus</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="health">
+                    <div class="bg-gradient-to-br from-teal-800 to-emerald-700 p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-teal-100 font-semibold uppercase">Fitness & Wellness</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">Open Gym Initiatives</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Promoting community fitness, physical activity, and preventive healthcare access in accessible public spaces.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="dumbbell" class="w-4 h-4 text-teal-600"></i> Community Fitness</span>
+                            <span class="font-semibold text-brand-primary">Public Spaces</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="nutrition">
+                    <div class="bg-gradient-to-br from-amber-700 to-brand-coral p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-amber-100 font-semibold uppercase">Poshan Program</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">Kuposhan Mukt Bharat</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Combating child and maternal malnutrition through specialized nutritional kits distributed systematically across schools & Anganwadis.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="box" class="w-4 h-4 text-amber-600"></i> Poshan Kits</span>
+                            <span class="font-semibold text-brand-primary">Anganwadi Reach</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="health">
+                    <div class="bg-gradient-to-br from-rose-900 to-rose-700 p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-rose-100 font-semibold uppercase">Critical Care</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">Mobile Dialysis Unit (MMU)</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Bringing critical, life-saving renal care infrastructure and advanced medical treatment directly to underserved remote locations.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="truck" class="w-4 h-4 text-rose-600"></i> Mobile Health Unit</span>
+                            <span class="font-semibold text-brand-primary">Remote Dialysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="health">
+                    <div class="bg-gradient-to-br from-red-800 to-amber-800 p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-red-100 font-semibold uppercase">Healthcare Camps</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">Anemia Mukt Bharat</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Targeted health camps, diagnostic screening, and specialized treatment modules addressing iron-deficiency anemia in women and adolescents.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="heart-pulse" class="w-4 h-4 text-red-600"></i> Screening & Iron Kits</span>
+                            <span class="font-semibold text-brand-primary">Women & Youth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="livelihood">
+                    <div class="bg-gradient-to-br from-purple-900 to-indigo-800 p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-purple-100 font-semibold uppercase">Economic Self-Reliance</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">Livelihood COE Projects</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Establishing Centers of Excellence (COE) to facilitate future-ready skill development and economic independence, primarily focusing on rural women.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="award" class="w-4 h-4 text-purple-600"></i> Center of Excellence</span>
+                            <span class="font-semibold text-brand-primary">Women Empowerment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="education">
+                    <div class="bg-gradient-to-br from-red-800 to-red-900 p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-red-100 font-semibold uppercase">Digital Education</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">Smart Class Transformation</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Creating technology-enabled learning environments through digital content, audio-visual tools, and interactive educational resources for students.
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="monitor" class="w-4 h-4 text-blue-500"></i> Interactive Content</span>
+                            <span class="font-semibold text-brand-primary">Tech Learning</span>
+                        </div>
+                    </div>
+                </div>
+<!-- Project 9 -->
+                <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all" data-category="livelihood">
+                    <div class="bg-gradient-to-br from-purple-900 to-indigo-800 p-6 text-white relative">
+                        <span class="text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-md text-purple-100 font-semibold uppercase">STEM Skilss development</span>
+                        <h3 class="font-serif text-xl font-bold mt-3 text-white">ATL Labs</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+ Fueling creativity and innovation, we are proud to introduce children to the Atal Tinkering Labs—a nationwide initiative that encourages hands-on learning in science, technology, engineering, and mathematics through practical experiments and problem-solving activities.                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span class="flex items-center gap-1"><i data-lucide="award" class="w-4 h-4 text-purple-600"></i> Smart innovations</span>
+                            <span class="font-semibold text-brand-primary">Feuling creativivy and innovations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALIGNMENTS SECTION -->
+    <section id="alignments" class="py-16 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-gold text-xs font-bold uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full border border-white/10">Strategic Alignment</span>
+                <h2 class="font-serif text-3xl font-bold mt-3">National & Global Targets</h2>
+                <p class="text-slate-400 text-sm mt-2">Actively aligned with Sustainable Development Goals (SDGs) and key Indian Government initiatives.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- SDG 4 -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 text-center hover:border-brand-gold transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-red-600 text-white font-bold flex items-center justify-center mx-auto mb-3 text-lg">
+                        SDG 4
+                    </div>
+                    <h4 class="font-bold text-white text-base">Quality Education</h4>
+                    <p class="text-xs text-slate-400 mt-1">Sustainable community development & modern learning.</p>
+                </div>
+
+                <!-- NEP 2020 & RAA -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 text-center hover:border-brand-gold transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-primary text-brand-gold flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="book-marked" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base">NEP 2020 & RAA</h4>
+                    <p class="text-xs text-slate-400 mt-1">National Education Policy & Rashtriya Avishkar Abhiyan.</p>
+                </div>
+
+                <!-- Poshan Abhiyaan & AIM -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 text-center hover:border-brand-gold transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base">Poshan Abhiyaan & AIM</h4>
+                    <p class="text-xs text-slate-400 mt-1">National Nutrition Mission & Atal Innovation Mission.</p>
+                </div>
+
+                <!-- Anganwadi Interventions -->
+                <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 text-center hover:border-brand-gold transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-coral text-white flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="home" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base">Anganwadi Networks</h4>
+                    <p class="text-xs text-slate-400 mt-1">Grassroots localized health, screening & nutrition centers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- CTA / GET INVOLVED BANNER -->
+    <section class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold">Partner with Us</h2>
+            <p class="text-slate-200 text-lg max-w-2xl mx-auto">
+                Join hands with the Association of AYUSH Professionals and Innovators. We collaborate with PSUs, CSR foundations, and government bodies for transparent, measurable social transformation.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <button onclick="openModal()" class="bg-brand-coral hover:bg-red-600 text-white font-bold px-8 py-4 rounded-xl text-base transition-all shadow-lg flex items-center gap-2">
+                    <i data-lucide="file-text" class="w-5 h-5"></i> Initiate Corporate Partnership
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div class="md:col-span-2 space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-primary flex items-center justify-center text-brand-gold font-bold">
+                        <img src="logo.png" alt="AYUSH Logo" style="width: 75px; height: 75px; object-fit: contain;" class="transition-transform group-hover:scale-105" />
+                    </div>
+                    <span class="font-serif text-lg font-bold text-white">AYUSH Professionals & Innovators</span>
+                </div>
+
+                <!-- Contact Details Section -->
+                <div class="space-y-2 pt-2 text-sm text-slate-300">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-brand-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <a href="tel:+919355011827" class="hover:text-white transition-colors">+91 9355011827</a>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-brand-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <a href="mailto:ayushpfsinvs@gmail.com" class="hover:text-white transition-colors">ayushpfsinvs@gmail.com</a>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>87-D, 1st floor, Sidharth Extension, New Delhi-110014</span>
+                    </div>
+                </div>
+            </div>
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#focus-areas" class="hover:text-white transition-colors">Core Pillars</a></li>
+                        <li><a href="#initiatives" class="hover:text-white transition-colors">Flagship Projects</a></li>
+                        <li><a href="#alignments" class="hover:text-white transition-colors">SDG & National Goals</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Key Focus</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><span>Preventive Healthcare</span></li>
+                        <li><span>Kuposhan Mukt Bharat</span></li>
+                        <li><span>Mobile Dialysis Units</span></li>
+                        <li><span>Smart Class Education</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2016-2026 Association of AYUSH Professionals and Innovators. All rights reserved.</p>
+                <p>Designed in alignment with Viksit Bharat@2047</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CSR / PARTNERSHIP MODAL -->
+    <div id="partnerModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 relative shadow-2xl space-y-6">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="space-y-2">
+                <span class="text-xs font-bold text-brand-primary uppercase tracking-widest">CSR & PSU Engagement</span>
+                <h3 class="font-serif text-2xl font-bold text-slate-900">Partner with Association</h3>
+                <p class="text-slate-600 text-xs">Fill out the details below and our partnership officer will reach out with a detailed project proposal.</p>
+            </div>
+
+            <form id="partner-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Organization / Company Name</label>
+                    <input type="text" required placeholder="e.g. CSR Foundation / PSU Name" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Contact Email</label>
+                    <input type="email" required placeholder="name@organization.org" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Primary Project Interest</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary">
+                        <option>Kuposhan Mukt Bharat (Poshan Kits)</option>
+                        <option>Mobile Dialysis Unit (MMU)</option>
+                        <option>Education Bags & Smart Class</option>
+                        <option>Aarogya Rath (RO Water)</option>
+                        <option>Livelihood COE Projects</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Message / Key Requirements</label>
+                    <textarea rows="3" placeholder="Share briefly about your target locations or budget outline..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-primary hover:bg-brand-dark text-white font-semibold py-3 rounded-xl text-sm transition-all shadow-md">
+                    Submit Collaboration Request
+                </button>
+            </form>
+
+            <div id="modal-success" class="hidden text-center py-6 space-y-3">
+                <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                    <i data-lucide="check" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-lg">Thank You!</h4>
+                <p class="text-xs text-slate-600">Your partnership request has been received. Our team will get back to you shortly.</p>
+                <button onclick="closeModal()" class="mt-4 bg-slate-100 text-slate-700 px-6 py-2 rounded-xl text-xs font-bold">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Project Filter Functionality
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-brand-primary', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            event.target.classList.remove('bg-slate-100', 'text-slate-700');
+            event.target.classList.add('bg-brand-primary', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Handlers
+        function openModal() {
+            document.getElementById('partnerModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('partnerModal').classList.add('hidden');
+            document.getElementById('partner-form').classList.remove('hidden');
+            document.getElementById('modal-success').classList.add('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('partner-form').classList.add('hidden');
+            document.getElementById('modal-success').classList.remove('hidden');
+        }
+
+        // Impact Estimator Logic
+        const slider = document.getElementById('grant-slider');
+        const displayAmount = document.getElementById('grant-amount-display');
+        const calcPoshan = document.getElementById('calc-poshan');
+        const calcWater = document.getElementById('calc-water');
+        const calcSchools = document.getElementById('calc-schools');
+
+        slider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            displayAmount.textContent = '₹ ' + val.toLocaleString('en-IN');
+
+            // Calculation multipliers (estimates)
+            const poshanCount = Math.floor(val / 200);
+            const waterCount = Math.floor(val / 50000);
+            const schoolCount = Math.floor(val / 100000);
+
+            calcPoshan.textContent = poshanCount.toLocaleString('en-IN');
+            calcWater.textContent = waterCount.toLocaleString('en-IN');
+            calcSchools.textContent = schoolCount.toLocaleString('en-IN');
+        });
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let activeIndex = 0;
+    const slides = document.querySelectorAll('.auto-slide');
+    const dots = document.querySelectorAll('#auto-dots .dot-indicator');
+    const total = slides.length;
+
+    if (total === 0) return;
+
+    function changeSlide() {
+        // Current active slide ko fade out karein
+        slides[activeIndex].style.opacity = "0";
+        if (dots[activeIndex]) {
+            dots[activeIndex].style.width = "6px";
+            dots[activeIndex].style.backgroundColor = "rgba(255,255,255,0.4)";
+        }
+
+        // Index aage badhayein
+        activeIndex = (activeIndex + 1) % total;
+
+        // Next slide ko fade in karein
+        slides[activeIndex].style.opacity = "1";
+        if (dots[activeIndex]) {
+            dots[activeIndex].style.width = "20px";
+            dots[activeIndex].style.backgroundColor = "#ffffff";
+        }
+    }
+
+    // Har 2.5 second (2500ms) me slide apne aap badlegi
+    setInterval(changeSlide, 2500);
+});
+</script>
+</body>
+</html>
